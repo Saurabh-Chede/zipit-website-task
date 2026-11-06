@@ -1,0 +1,245 @@
+/* ---------- Form bits ---------- */
+.field {
+  margin-bottom: 16px;
+}
+
+.field__label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.field__error {
+  color: #d93025;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.input[aria-invalid='true'] {
+  border-color: #d93025;
+}
+
+.input[aria-invalid='true']:focus {
+  box-shadow: 0 0 0 3px rgba(217, 48, 37, 0.12);
+}
+
+.password {
+  position: relative;
+}
+
+.password .input {
+  padding-right: 40px;
+}
+
+.password__toggle {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  padding: 6px;
+  display: grid;
+}
+
+/* ---------- Auth layout ---------- */
+.auth {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(340px, 5fr) 7fr;
+  background: #fff;
+}
+
+.auth__panel {
+  background: linear-gradient(350deg, var(--navy) 0%, #7a7496 100%);
+  color: #fff;
+  padding: 36px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.auth__headline {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+  max-width: 360px;
+  letter-spacing: -0.5px;
+}
+
+.auth__points {
+  list-style: none;
+  margin-top: 28px;
+  display: grid;
+  gap: 14px;
+}
+
+.auth__points li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #d9d4f7;
+}
+
+.auth__points svg {
+  color: #3fd17a;
+  flex-shrink: 0;
+}
+
+.auth__copy {
+  color: #a49ddb;
+}
+
+.auth__main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  background: var(--bg);
+}
+
+.auth__back {
+  position: absolute;
+  top: 28px;
+  left: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.auth__back:hover {
+  color: var(--primary);
+}
+
+.auth__card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(30, 20, 90, 0.08);
+  padding: 36px 32px;
+}
+
+.auth-form__title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.auth-form__subtitle {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 6px 0 24px;
+  line-height: 1.5;
+}
+
+.auth-form__alert {
+  background: #fdf1f1;
+  color: #b42318;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.auth-form__submit {
+  margin-top: 8px;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.auth-form__alt {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 20px;
+}
+
+.auth-form__alt a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-form__alt a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 860px) {
+  .auth {
+    grid-template-columns: 1fr;
+  }
+
+  .auth__panel {
+    display: none;
+  }
+
+  .auth__back {
+    left: 20px;
+  }
+}
+
+/* ---------- Profile menu ---------- */
+.profile {
+  position: relative;
+}
+
+.profile__menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  min-width: 220px;
+  z-index: 40;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(20, 20, 60, 0.12);
+  padding: 6px;
+}
+
+.profile__info {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+  display: grid;
+  gap: 2px;
+}
+
+.profile__info strong {
+  font-size: 13.5px;
+  text-transform: capitalize;
+}
+
+.profile__info span {
+  font-size: 12px;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: none;
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--text);
+  text-align: left;
+}
+
+.profile__item:hover {
+  background: var(--primary-soft);
+  color: var(--primary);
+}

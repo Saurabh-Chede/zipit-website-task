@@ -1,0 +1,219 @@
+/* @import "tailwindcss";
+
+:root {
+  --navy: #1a1066;
+  --navy-light: #2a1d86;
+  --primary: #6d4cdb;
+  --primary-dark: #5a3bc4;
+  --primary-soft: #f1edff;
+  --purple-deep: #4b1a73;
+  --green: #16a34a;
+  --green-soft: #eaf8ef;
+  --teal: #0f8a7c;
+  --text: #1a1a2e;
+  --text-muted: #5f6577;
+  --text-light: #9aa0b0;
+  --border: #e6e8ef;
+  --bg: #f5f6fa;
+  --card: #ffffff;
+  --radius: 10px;
+  --shadow: 0 1px 3px rgba(20, 20, 60, 0.05);
+  --sidebar-w: 72px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
+
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+  padding: 8px 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #fff;
+  background: linear-gradient(135deg, #4a148c, #7b1fa2);
+  border: 1px solid #9c4dcc;
+  border-radius: 999px;
+  cursor: pointer;
+  isolation: isolate;
+}
+
+
+.shimmer-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  animation: shimmer 2.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes shimmer {
+  0%   { left: -120%; }
+  60%  { left: 160%; }
+  100% { left: 160%; }
+}
+
+
+.shimmer-btn:hover::after { animation-duration: 1.2s; }
+
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmer-btn::after { animation: none; }
+} */
+
+
+@import "tailwindcss";
+
+/* Design tokens for Tailwind utilities (text-brand, border-line, shadow-card, ...) */
+@theme {
+  --color-brand: #6d4cdb;
+  --color-brand-dark: #5a3bc4;
+  --color-brand-soft: #f1edff;
+  --color-ink: #1a1a2e;
+  --color-ink-muted: #5f6577;
+  --color-ink-light: #9aa0b0;
+  --color-line: #e6e8ef;
+  --shadow-card: 0 1px 3px rgba(20, 20, 60, 0.05);
+}
+
+:root {
+  --navy: #1a1066;
+  --navy-light: #2a1d86;
+  --primary: #6d4cdb;
+  --primary-dark: #5a3bc4;
+  --primary-soft: #f1edff;
+  --purple-deep: #4b1a73;
+  --green: #16a34a;
+  --green-soft: #eaf8ef;
+  --teal: #0f8a7c;
+  --text: #1a1a2e;
+  --text-muted: #5f6577;
+  --text-light: #9aa0b0;
+  --border: #e6e8ef;
+  --bg: #f5f6fa;
+  --card: #ffffff;
+  --radius: 10px;
+  --shadow: 0 1px 3px rgba(20, 20, 60, 0.05);
+  --sidebar-w: 72px;
+}
+
+/* Must live in a layer: unlayered rules beat Tailwind utilities (px-4, mt-2, ...) */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
+
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+  padding: 8px 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #fff;
+  background: linear-gradient(135deg, #4a148c, #7b1fa2);
+  border: 1px solid #9c4dcc;
+  border-radius: 999px;
+  cursor: pointer;
+  isolation: isolate;
+}
+
+/* moving shine */
+.shimmer-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  animation: shimmer 2.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes shimmer {
+  0%   { left: -120%; }
+  60%  { left: 160%; }
+  100% { left: 160%; } /* pause between sweeps */
+}
+
+/* optional: faster shine + glow on hover */
+.shimmer-btn:hover::after { animation-duration: 1.2s; }
+
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmer-btn::after { animation: none; }
+}
