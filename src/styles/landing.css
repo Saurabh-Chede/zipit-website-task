@@ -1,5 +1,4 @@
 
-
 :root {
     --navy: #111a4b;
     --purple: #4f19ec;
@@ -170,6 +169,7 @@ h3 {
     padding-bottom: 50px;
     justify-content: space-between;
 }
+
 
 .eyebrow,
 .green-pill {
@@ -1378,4 +1378,273 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         gap: 18px
     }
+}
+
+/* ================= RESPONSIVE OVERRIDES ================= */
+
+/* ---------- Top offer bar ---------- */
+.offer-bar {
+  height: auto;
+  min-height: 38px;
+  padding: 8px 14px;
+  flex-wrap: wrap;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ---------- Hero ---------- */
+.hero-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 54px);
+}
+
+.hero-offer {
+  max-width: 100%;
+}
+
+/* ---------- WhatsApp ---------- */
+.whatsapp {
+  align-items: center;
+  gap: 24px;
+}
+
+.whatsapp h2 {
+  font-size: clamp(36px, 7vw, 60px);
+  line-height: 1.05;
+}
+
+.whatsapp img,
+.whatsapp .w-100 {
+  width: 100%;
+}
+
+.whatsapp img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ---------- Tablet & below ---------- */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: auto;
+    gap: 32px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  .hero-visual {
+    display: none; /* empty div hai, jagah waste karta tha */
+  }
+
+  .hero p {
+    max-width: none;
+  }
+
+  .signup-card {
+    max-width: none;
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .whatsapp {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .whatsapp p {
+    max-width: none;
+  }
+
+  .whatsapp .w-100 {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .offer-bar {
+    font-size: 11px;
+    gap: 6px;
+    padding: 8px 12px;
+  }
+
+  .offer-bar button {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+
+  .hero {
+    padding-top: 28px;
+    gap: 26px;
+  }
+
+  .hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+  }
+
+  .mini-points {
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    font-size: 11px;
+  }
+
+  .hero-offer {
+    width: 100%;
+  }
+
+  .signup-card {
+    padding: 18px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr; /* name + business stack ho jayein */
+  }
+
+  /* 16px se kam hoga to iOS zoom karta hai */
+  .signup-card input,
+  .signup-card select {
+    font-size: 16px;
+    padding: 11px 12px;
+  }
+
+  .signup-card label {
+    font-size: 11px;
+    align-items: flex-start;
+  }
+
+  .signup-card > p,
+  .signup-card small {
+    font-size: 12px;
+  }
+
+  .gradient-btn {
+    font-size: 14px;
+    padding: 13px;
+  }
+
+  .whatsapp {
+    padding: 20px 16px;
+    margin-top: 16px;
+  }
+
+  .whatsapp-tags span {
+    padding: 10px;
+    font-size: 11px;
+  }
+
+  .green-pill {
+    font-size: 9px;
+  }
+
+  .free-pill {
+    max-width: 100%;
+  }
+
+  .whatsapp .w-100 {
+    max-width: 260px;
+  }
+}
+
+/* ================= SHIPPING JOURNEY ================= */
+
+/* line + animation removed */
+.journey-line {
+  display: none;
+}
+
+.journey {
+  padding: clamp(32px, 6vw, 58px) clamp(16px, 4vw, 40px);
+  min-height: auto;
+}
+
+.journey h2 {
+  font-size: clamp(24px, 5vw, 28px);
+}
+
+.journey > p {
+  font-size: clamp(12px, 2.5vw, 14px);
+}
+
+.steps {
+  margin-top: clamp(28px, 5vw, 50px);
+  gap: 24px 16px;
+}
+
+.steps span {
+  max-width: 160px;
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 800px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 32px;
+  }
+
+  .steps b {
+    font-size: 15px;
+  }
+
+  .steps span {
+    font-size: 12px;
+  }
+}
+
+/* Mobile: 1 column, number left + text right */
+@media (max-width: 480px) {
+  .steps {
+    grid-template-columns: 1fr;
+    row-gap: 22px;
+    text-align: left;
+  }
+
+  .steps > div {
+    display: grid !important;
+    grid-template-columns: 34px 1fr;
+    column-gap: 14px;
+    row-gap: 2px;
+    align-items: start;
+    text-align: left;
+  }
+
+  .steps i {
+    grid-row: span 2;
+  }
+
+  .steps span {
+    max-width: none;
+  }
+}
+
+/* Step number circles: perfectly centered */
+.steps i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Mobile layout: circle stays at the top-left of its row */
+@media (max-width: 480px) {
+  .steps i {
+    align-self: start;
+  }
 }

@@ -476,7 +476,7 @@ export default function LandingPage() {
         <p>Four simple steps from click to doorstep.</p>
 
         <div className="steps">
-          <div className="journey-line" aria-hidden="true" />
+          
 
           {[
             ["1", "Connect", "Sync your store and start orders"],
